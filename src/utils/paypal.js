@@ -50,7 +50,7 @@ export const createOrder = (selector, {
     amount
 }) => 
     loadSPB({ 
-        "client-id":"AdiJ-00teiFyzbFBbiiPq-_S8glnvCkIvmS4UuRaCLegYqu075MErmZYwdMEzdhypVdb5lM4VIezO77M",
+        "client-id":"AXrJY9K-DZHe7nN_GW23TZt60LEsQ6sQshNx_nYFx1CSXwwEMJH3ZmruVZhRDO2AFLMlNS4MplWNmanq",
         commit,
         intent,
         ...((intent === "tokenize" || intent === "subscription") && {
@@ -95,41 +95,21 @@ export const createOrder = (selector, {
                                         email_address: "hey@cspalevc.com",
                                         options: [
                                             {
-                                                id: "shipping-1",
-                                                label: "Express Shipping",
+                                                id: "1",
                                                 type: "SHIPPING",
+                                                label: "Express Shipping",
                                                 amount: {
-                                                    value: "10",
+                                                    value: "11",
                                                     currency_code: "USD"
                                                 },
                                                 selected: true
                                             },
                                             {
-                                                id: "shipping-2",
-                                                label: "Super Express Shipping",
-                                                type: "SHIPPING",
-                                                amount: {
-                                                    value: "20",
-                                                    currency_code: "USD"
-                                                },
-                                                selected: false
-                                            },
-                                            {
-                                                id: "pickup-1",
-                                                label: "Pickup in Store",
+                                                id: "2",
                                                 type: "PICKUP",
+                                                label: "Express Pickup",
                                                 amount: {
                                                     value: "10",
-                                                    currency_code: "USD"
-                                                },
-                                                selected: false
-                                            },
-                                            {
-                                                id: "pickup-2",
-                                                label: "Drop off to car",
-                                                type: "PICKUP",
-                                                amount: {
-                                                    value: "20",
                                                     currency_code: "USD"
                                                 },
                                                 selected: false
