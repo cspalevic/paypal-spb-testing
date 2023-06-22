@@ -12,10 +12,23 @@ loadSPB({
     intent,
     ...((intent === "tokenize" || intent === "subscription") && {
         vault: true
-    })
+    }),
+    components: "messages"
 })
     .then((paypal) => {
         // Loaded script, ready to use
+        paypal.Messages({
+            amount: 500,
+            placement: 'product',
+            style: {
+              layout: 'text',
+              logo: {
+                type: 'primary',
+                position: 'top'
+              }
+            }
+          })
+          .render('.pp-message');
         paypal
             .Buttons({
                 style: {
@@ -55,15 +68,21 @@ export const createOrder = (selector, {
         intent,
         ...((intent === "tokenize" || intent === "subscription") && {
             vault: true
-        })
+        }),
+        "enable-funding": "paylater",
+        components: "messages,buttons"
     })
         .then((paypal) => {
             // Loaded script, ready to use
+            paypal.Messages({
+                amount
+            }).render(selector);
             paypal
                 .Buttons({
                     style: {
                         layout
                     },
+                    
                     async createOrder(data, actions) {
                         const response = await actions.order.create({
                             purchase_units: [

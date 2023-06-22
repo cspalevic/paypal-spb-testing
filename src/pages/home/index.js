@@ -78,6 +78,7 @@ const PayPal = () => {
                 </div>
                 <button onClick={loadPayPal}>Load PayPal</button>
             </div>
+            <div className="pp-message"></div>
             <div ref={container} />
         </div>
     );
